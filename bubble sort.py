@@ -13,17 +13,17 @@ import sys
 #
 
 def countSwaps(a):
-    count=0
-    for j in range(len(a)-1):
-        for i in range(j,-1,-1):
-            if a[i]>a[i+1]:
-                a[i],a[i+1]=a[i+1],a[i]
-                count+=1
-            
-    print("Array is sorted in",count,"swaps.")
-    print("First Element:",a[0])
-    print("Last Element:",a[-1])
+    numSwaps = 0
+    for i in range(len(a)):
+        for j in range(len(a)-1):
+            if a[j] > a[j+1]:
+                a[j] , a[j+1] = a[j+1] , a[j]
+                numSwaps+=1
 
+    print("Array is sorted in",numSwaps,"swaps.")
+    print("First Element:",a[0])
+    print("Last Element:",a[len(a)-1])
+    
 if __name__ == '__main__':
     n = int(input().strip())
 
